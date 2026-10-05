@@ -1,0 +1,29 @@
+services:
+  php:
+    build: .
+    container_name: mi_php
+    ports:
+      - "8090:80"
+
+      
+
+  mysql: 
+    image: mysql:8.0
+    container_name: mi_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: app_tareas
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: mi_phpmyadmin
+    ports :
+      - "8091:80"
+    environment:
+      PMA_HOST: mysql
+
+volumes:
+  mysql_data:      

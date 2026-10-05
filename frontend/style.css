@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #f4f6f8;
+color: #222;
+min-height: 100vh;
+}
+
+/* CABECERA */
+
+#encabezado {
+background: #1f2937;
+color: white;
+padding: 30px 20px;
+text-align: center;
+}
+
+#encabezado h1 {
+font-size: 2rem;
+}
+
+/* CONTENEDOR */
+
+#contenedor-tareas {
+width: 90%;
+max-width: 700px;
+margin: 40px auto;
+}
+
+/* FORMULARIO */
+
+#form-tareas {
+display: flex;
+gap: 10px;
+margin-bottom: 30px;
+}
+
+#titulo {
+flex: 1;
+padding: 14px 16px;
+border: 2px solid #d1d5db;
+border-radius: 10px;
+font-size: 1rem;
+outline: none;
+background: white;
+}
+
+#titulo:focus {
+border-color: #1b66cf;
+}
+
+#boton_añadir {
+padding: 14px 20px;
+border: none;
+border-radius: 10px;
+background: #2563eb;
+color: white;
+font-size: 1rem;
+cursor: pointer;
+transition: 0.2s;
+}
+
+#boton_añadir:hover {
+background: #1d4ed8;
+transform: translateY(-1px);
+}
+
+/* LISTA */
+
+#lista-tareas {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+/* CADA TAREA */
+
+#lista-tareas li {
+background: white;
+padding: 16px 18px;
+border-radius: 12px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+display: flex;
+align-items: center;
+gap: 10px;
+
+font-size: 1rem;
+}
+
+/* EL TEXTO DE LA TAREA */
+
+#lista-tareas li {
+word-break: break-word;
+}
+
+/* BOTONES DE LAS TAREAS */
+
+#lista-tareas button {
+border: none;
+padding: 8px 12px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 0.9rem;
+transition: 0.2s;
+}
+
+/* BOTÓN ELIMINAR */
+
+#lista-tareas button:first-of-type {
+margin-left: auto;
+background: #ef4444;
+color: white;
+}
+
+#lista-tareas button:first-of-type:hover {
+background: #dc2626;
+}
+
+/* BOTÓN COMPLETAR */
+
+#lista-tareas button:last-of-type {
+background: #10b981;
+color: white;
+}
+
+#lista-tareas button:last-of-type:hover {
+background: #059669;
+}
+
+/* TAREAS COMPLETADAS */
+
+#lista-tareas li.completed {
+opacity: 0.65;
+}
+
+#lista-tareas li.completed .texto-tarea {
+text-decoration: line-through;
+}
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+#form-tareas {
+flex-direction: column;
+}
+
+#boton_añadir {
+width: 100%;
+}
+
+#lista-tareas li {
+flex-wrap: wrap;
+}
+
+#lista-tareas button {
+margin-top: 5px;
+}
+}
